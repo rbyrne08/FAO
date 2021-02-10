@@ -2,10 +2,40 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from PIL import Image
 
+posts = [
+    {
+        'author':'Ryan Byrne',
+        'title': 'Blog Post 1',
+        'content': 'First post content',
+        'date_posted': 'August 27, 2018'
+    },
+    {
+        'author':'Logan Rupert',
+        'title': 'Blog Post 2',
+        'content': 'Second post content',
+        'date_posted': 'August 28, 2018'
+    }
+]
+
 def home(request):
-    return render(request, 'FAO/homePage.html')
+    context = {
+        'posts': posts
+    }
+    return render(request, 'FAO/homePage.html', context)
 
 def about(request):
+    output = "In Development"
+    return HttpResponse(output)
+
+def tech(request):
+    output = "In Development"
+    return HttpResponse(output)
+
+def project(request):
+    output = "In Development"
+    return HttpResponse(output)
+
+def contacts(request):
     output = "In Development"
     return HttpResponse(output)
 
